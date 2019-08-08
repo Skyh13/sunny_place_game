@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Lateral movement variables
 	public float moveSpeed;
+    public float timeBetweenSteps;
 
     // Vertical movement variables
     public float jumpSpeed;
@@ -34,7 +35,10 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping = false;
     bool isOnGround;
 
+    float currentTimeBetweenSteps = 0;
+
 	Rigidbody2D rb;
+    PlayerSound psounds;
 	Vector2 movement;
 
     // Start is called before the first frame update
@@ -47,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
+        StepSound();
     }
 
     void FixedUpdate()
@@ -69,13 +74,27 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movement * moveSpeed * Time.fixedDeltaTime);
     }
 
+    void StepSound()
+    {
+        if(isOnGround && Mathf.Abs(rb.velocity.x) > 0.1f) {
+            if(currentTimeBetweenSteps > 0) {
+                currentTimeBetweenSteps -= Time.deltaTime;
+            } else {
+                psounds.PlayStepSound();
+                currentTimeBetweenSteps = timeBetweenSteps;
+            }
+        } else {
+            currentTimeBetweenSteps = timeBetweenSteps;
+        }
+    }
+
     void Move()
     {
         movement = Vector2.zero;
 
 		if (Input.GetKeyDown(jumpKey) && isOnGround) {
 			isJumping = true;
-            //jumpSound.Play();
+            psounds.PlayJumpSound();
 		}
 
 		if (Input.GetKeyUp(jumpKey) && !isOnGround) {
