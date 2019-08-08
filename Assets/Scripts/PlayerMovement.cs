@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
     * Private Variables
     * */
     // Vertical movement variables
-    float currentJumpHoldTime;
-    bool isJumping;
+    float currentJumpHoldTime = 0;
+    bool isJumping = false;
     bool isOnGround;
 
 	Rigidbody2D rb;
@@ -53,19 +53,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumping) {
 			rb.AddForce(Vector2.up * jumpSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            currentJumpHoldTime = jumpHoldTime;
 			isJumping = false;
 		}
 		else if (!isOnGround && Input.GetKey(jumpKey) && currentJumpHoldTime > 0) {
 			rb.AddForce(Vector2.up * jumpSpeed * jumpHoldModifier * currentJumpHoldTime * Time.fixedDeltaTime, ForceMode2D.Impulse);
-		}
+            currentJumpHoldTime -= Time.fixedDeltaTime;
+        }
 
 		if (!isOnGround && rb.velocity.y < 0) {
-			// this means we're in the air and falling. i want to apply some additional gravity in this case;
-            rb.AddForce(Vector2.down * fallingGravityModifier * Time.fixedDeltaTime, ForceMode2D.Impulse);
-			//Vector2 v = rb.velocity;
-			//v.y -= fallingGravityModifier * Time.fixedDeltaTime;
-			//rb.velocity = v;			
-		}
+            // this means we're in the air and falling. i want to apply some additional gravity in this case;
+            rb.AddForce(Vector2.down * fallingGravityModifier * Time.fixedDeltaTime, ForceMode2D.Impulse);         
+        }
 
         rb.AddForce(movement * moveSpeed * Time.fixedDeltaTime);
     }
@@ -83,10 +82,6 @@ public class PlayerMovement : MonoBehaviour
 			currentJumpHoldTime = 0;
 		}
 
-        if (Input.GetKey(jumpKey) && !isOnGround) {
-			currentJumpHoldTime -= Time.deltaTime;
-		}
-        
         if (Input.GetKey(downKey)) {
 
         }
@@ -103,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D (Collision2D c) {
 		if (c.gameObject.tag == "ground") {
 			isOnGround = true;
-			currentJumpHoldTime = jumpHoldTime;
             Vector2 v = rb.velocity;
             v.y = 0;
             rb.velocity = v;
