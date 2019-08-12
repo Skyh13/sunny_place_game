@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        psounds = GetComponent<PlayerSound>();
     }
 
     // Update is called once per frame
