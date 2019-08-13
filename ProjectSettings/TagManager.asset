@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - player
+  - changeStageX
+  - changeStageY
   layers:
   - Default
   - TransparentFX

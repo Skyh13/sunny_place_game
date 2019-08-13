@@ -129,4 +129,48 @@ public class PlayerMovement : MonoBehaviour
 			isOnGround = false;
 		}	
 	}
+
+    void OnTriggerEnter2D (Collider2D c) {
+        if (c.gameObject.tag == "changeStageX") {
+            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+            if (transform.position.x < cam.transform.position.x) {
+                cam.MoveFullLeft(0.5f);
+            } else {
+                cam.MoveFullRight(0.5f);
+            }
+        }
+
+        if (c.gameObject.tag == "changeStageY") {
+            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+            if (transform.position.y < cam.transform.position.y) {
+                cam.MoveFullDown(0.5f);
+            } else {
+                cam.MoveFullUp(0.5f);
+            }
+        }
+    }
+
+    void OnTriggerExit2D (Collider2D c) {
+        if (c.gameObject.tag == "changeStageX") {
+            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+            if (transform.position.x < cam.transform.position.x - (cam.GetCameraWidth()/2)) {
+                cam.MoveFullLeft(0.5f);
+            } 
+            
+            if (transform.position.x > cam.transform.position.x + (cam.GetCameraWidth()/2)) {
+                cam.MoveFullRight(0.5f);
+            }
+        }
+
+        if (c.gameObject.tag == "changeStageY") {
+            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+            if (transform.position.y < cam.transform.position.y - (cam.GetCameraHeight()/2)) {
+                cam.MoveFullDown(0.5f);
+            } 
+            
+            if (transform.position.y > cam.transform.position.y + (cam.GetCameraHeight()/2)) {
+                cam.MoveFullUp(0.5f);
+            }
+        }
+    }
 }
