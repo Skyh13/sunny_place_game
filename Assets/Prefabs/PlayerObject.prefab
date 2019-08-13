@@ -57,6 +57,7 @@ MonoBehaviour:
   fallingGravityModifier: 500
   jumpHoldTime: 0.35
   jumpHoldModifier: 0.82
+  maxHealth: 5
 --- !u!114 &9031059350739482321
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHoldTime;
     public float jumpHoldModifier;
 
+    public int maxHealth;
+
 
     /**
     * Private Variables
@@ -37,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     float currentTimeBetweenSteps = 0;
 
+    int currentHealth;
+
 	Rigidbody2D rb;
     PlayerSound psounds;
 	Vector2 movement;
@@ -46,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         psounds = GetComponent<PlayerSound>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -122,7 +128,22 @@ public class PlayerMovement : MonoBehaviour
             v.y = 0;
             rb.velocity = v;
 		}
-	}
+        else if (c.gameObject.tag == "enemy")
+        {
+            // Player can still jump off the enemy's head, but loses 1 health
+            currentHealth--;
+            UIHealthBar.instance.SetValue((float)currentHealth / maxHealth);
+
+            if (currentHealth == 0)
+            {
+                SceneManager.LoadScene(3);
+            }
+            isOnGround = true;
+            //Vector2 v = rb.velocity;
+            //v.y = 0;
+            //rb.velocity = v;
+        }
+    }
 
 	void OnCollisionExit2D (Collision2D c) {
 		if (c.gameObject.tag == "ground") {
