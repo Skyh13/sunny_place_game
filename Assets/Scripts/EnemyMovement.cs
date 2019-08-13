@@ -74,14 +74,20 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D c) {
-        if (moveDirection == "left" && Mathf.Abs(rb.velocity.x) < 0.1f) {
-            moveDirection = "right";
-        } else if(moveDirection == "right" && Mathf.Abs(rb.velocity.x) < 0.1f) {
-            moveDirection = "left";
-        }
+
+
 	}
 
 	void OnCollisionExit2D (Collision2D c) {
 
 	}
+
+    public void ReverseDirection()
+    {
+        if (moveDirection == "left") {
+            moveDirection = "right";
+        } else {
+            moveDirection = "left";
+        }
+    }
 }
