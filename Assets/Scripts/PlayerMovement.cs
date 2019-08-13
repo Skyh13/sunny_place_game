@@ -122,13 +122,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D c) {
-		if (c.gameObject.tag == "ground") {
+		if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
 			isOnGround = true;
             Vector2 v = rb.velocity;
             v.y = 0;
             rb.velocity = v;
 		}
-        else if (c.gameObject.tag == "enemy")
+        
+        if (c.gameObject.tag == "enemy")
         {
             // Player can still jump off the enemy's head, but loses 1 health
             currentHealth--;
@@ -138,15 +139,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 SceneManager.LoadScene(3);
             }
-            isOnGround = true;
-            //Vector2 v = rb.velocity;
-            //v.y = 0;
-            //rb.velocity = v;
         }
     }
 
 	void OnCollisionExit2D (Collision2D c) {
-		if (c.gameObject.tag == "ground") {
+		if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
 			isOnGround = false;
 		}	
 	}
