@@ -8,6 +8,8 @@ TagManager:
   - player
   - changeStageX
   - changeStageY
+  - enemy
+  - endlessPit
   layers:
   - Default
   - TransparentFX

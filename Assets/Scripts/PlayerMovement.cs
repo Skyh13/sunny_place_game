@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,20 +26,16 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHoldTime;
     public float jumpHoldModifier;
 
-    public int maxHealth;
-
 
     /**
     * Private Variables
     * */
     // Vertical movement variables
     float currentJumpHoldTime = 0;
-    bool isJumping = false;
-    bool isOnGround;
+    public bool isJumping = false;
+    public bool isOnGround;
 
     float currentTimeBetweenSteps = 0;
-
-    int currentHealth;
 
 	Rigidbody2D rb;
     PlayerSound psounds;
@@ -51,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         psounds = GetComponent<PlayerSound>();
-        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -122,36 +116,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D c) {
-		if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
-			isOnGround = true;
-            Vector2 v = rb.velocity;
-            v.y = 0;
-            rb.velocity = v;
-		}
-        
-        if (c.gameObject.tag == "enemy")
-        {
-            // Player can still jump off the enemy's head, but loses 1 health
-            currentHealth--;
-            UIHealthBar.instance.SetValue((float)currentHealth / maxHealth);
 
-            if (currentHealth == 0)
-            {
-                SceneManager.LoadScene(3);
-            }
-        }
     }
 
 	void OnCollisionExit2D (Collision2D c) {
-		if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
-			isOnGround = false;
-		}	
+
 	}
 
     void OnTriggerEnter2D (Collider2D c) {
+        /*
         if (c.gameObject.tag == "changeStageX") {
             CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.x < cam.transform.position.x) {
+            if (transform.position.x < cam.GetIntendedPosition().x) {
                 cam.MoveFullLeft(0.5f);
             } else {
                 cam.MoveFullRight(0.5f);
@@ -160,35 +136,58 @@ public class PlayerMovement : MonoBehaviour
 
         if (c.gameObject.tag == "changeStageY") {
             CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.y < cam.transform.position.y) {
+            if (transform.position.y < cam.GetIntendedPosition().y) {
                 cam.MoveFullDown(0.5f);
             } else {
                 cam.MoveFullUp(0.5f);
             }
         }
+        */
+
+        if (c.gameObject.tag == "endlessPit") {
+            GameManager.Instance.GameOver();
+        }
+
+
     }
 
     void OnTriggerExit2D (Collider2D c) {
+        /*
         if (c.gameObject.tag == "changeStageX") {
             CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.x < cam.transform.position.x - (cam.GetCameraWidth()/2)) {
+            if (transform.position.x < cam.GetIntendedPosition().x - (cam.GetCameraWidth()/2)) {
                 cam.MoveFullLeft(0.5f);
             } 
             
-            if (transform.position.x > cam.transform.position.x + (cam.GetCameraWidth()/2)) {
+            if (transform.position.x > cam.GetIntendedPosition().x + (cam.GetCameraWidth()/2)) {
                 cam.MoveFullRight(0.5f);
             }
         }
 
         if (c.gameObject.tag == "changeStageY") {
             CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.y < cam.transform.position.y - (cam.GetCameraHeight()/2)) {
+            if (transform.position.y < cam.GetIntendedPosition().y - (cam.GetCameraHeight()/2)) {
                 cam.MoveFullDown(0.5f);
             } 
             
-            if (transform.position.y > cam.transform.position.y + (cam.GetCameraHeight()/2)) {
+            if (transform.position.y > cam.GetIntendedPosition().y + (cam.GetCameraHeight()/2)) {
                 cam.MoveFullUp(0.5f);
             }
         }
+        */
+
+        //if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
+		//	isOnGround = false;
+		//}	
+    }
+
+    public void SetOnGround(bool g)
+    {
+        isOnGround = g;
+    }
+
+    public Rigidbody2D GetRigidBody()
+    {
+        return rb;
     }
 }

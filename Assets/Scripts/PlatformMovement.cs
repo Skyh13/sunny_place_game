@@ -14,7 +14,7 @@ public class PlatformMovement : MonoBehaviour
     }
 
     public MovementAxis movementAxis;
-    float direction = 1;
+    public int direction = 1;
 
     Vector2 startingPosition;
     Vector2 velocity;
