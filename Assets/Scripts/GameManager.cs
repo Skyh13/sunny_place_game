@@ -10,19 +10,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		if (Instance == null) {
-			DontDestroyOnLoad(this);
-			Instance = this;
-		}
-		else {
-			Destroy(this.gameObject);
-		}
+        //if (Instance == null) {
+        //	DontDestroyOnLoad(this);
+        Instance = this;
+        //}
+        //else {
+        //	Destroy(this.gameObject);
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "GameOver" && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void PlayButtonPressed()
@@ -38,5 +41,10 @@ public class GameManager : MonoBehaviour
     public void QuitButtonPressed()
     {
         Application.Quit();
+    }
+
+    public void BackButtonPressed()
+    {
+        SceneManager.LoadScene(1);
     }
 }
