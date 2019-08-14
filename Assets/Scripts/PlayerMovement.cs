@@ -62,17 +62,33 @@ public class PlayerMovement : MonoBehaviour
             currentJumpHoldTime = jumpHoldTime;
 			isJumping = false;
 		}
-		else if (!isOnGround && Input.GetKey(jumpKey) && currentJumpHoldTime > 0) {
-			rb.AddForce(Vector2.up * jumpSpeed * jumpHoldModifier * currentJumpHoldTime * Time.fixedDeltaTime, ForceMode2D.Impulse);
-            currentJumpHoldTime -= Time.fixedDeltaTime;
+		else {
+
+            Vector2 force = Vector2.zero;
+
+            if (!isOnGround && Input.GetKey(jumpKey) && currentJumpHoldTime > 0) {
+                //movement += Vector2.up * jumpSpeed * jumpHoldModifier * currentJumpHoldTime * Time.fixedDeltaTime;
+
+                force = Vector2.up * jumpSpeed * jumpHoldModifier * currentJumpHoldTime * Time.fixedDeltaTime;
+
+                //rb.AddForce(Vector2.up * jumpSpeed * jumpHoldModifier * currentJumpHoldTime * Time.fixedDeltaTime);
+                currentJumpHoldTime -= Time.fixedDeltaTime;
+            }
+            if (!isOnGround && rb.velocity.y < 0) {
+
+                force = Vector2.down * fallingGravityModifier * Time.fixedDeltaTime;
+
+                // this means we're in the air and falling. i want to apply some additional gravity in this case;
+                //movement += Vector2.down * fallingGravityModifier * Time.fixedDeltaTime;
+                //rb.AddForce(Vector2.down * fallingGravityModifier * Time.fixedDeltaTime);         
+            }
+
+            force += (movement * moveSpeed * Time.fixedDeltaTime);
+
+            rb.AddForce(force);
         }
 
-		if (!isOnGround && rb.velocity.y < 0) {
-            // this means we're in the air and falling. i want to apply some additional gravity in this case;
-            rb.AddForce(Vector2.down * fallingGravityModifier * Time.fixedDeltaTime, ForceMode2D.Impulse);         
-        }
-
-        rb.AddForce(movement * moveSpeed * Time.fixedDeltaTime);
+        
     }
 
     void StepSound()
@@ -124,61 +140,13 @@ public class PlayerMovement : MonoBehaviour
 	}
 
     void OnTriggerEnter2D (Collider2D c) {
-        /*
-        if (c.gameObject.tag == "changeStageX") {
-            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.x < cam.GetIntendedPosition().x) {
-                cam.MoveFullLeft(0.5f);
-            } else {
-                cam.MoveFullRight(0.5f);
-            }
-        }
-
-        if (c.gameObject.tag == "changeStageY") {
-            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.y < cam.GetIntendedPosition().y) {
-                cam.MoveFullDown(0.5f);
-            } else {
-                cam.MoveFullUp(0.5f);
-            }
-        }
-        */
-
         if (c.gameObject.tag == "endlessPit") {
             GameManager.Instance.GameOver();
         }
-
-
     }
 
     void OnTriggerExit2D (Collider2D c) {
-        /*
-        if (c.gameObject.tag == "changeStageX") {
-            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.x < cam.GetIntendedPosition().x - (cam.GetCameraWidth()/2)) {
-                cam.MoveFullLeft(0.5f);
-            } 
-            
-            if (transform.position.x > cam.GetIntendedPosition().x + (cam.GetCameraWidth()/2)) {
-                cam.MoveFullRight(0.5f);
-            }
-        }
 
-        if (c.gameObject.tag == "changeStageY") {
-            CameraMovement cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-            if (transform.position.y < cam.GetIntendedPosition().y - (cam.GetCameraHeight()/2)) {
-                cam.MoveFullDown(0.5f);
-            } 
-            
-            if (transform.position.y > cam.GetIntendedPosition().y + (cam.GetCameraHeight()/2)) {
-                cam.MoveFullUp(0.5f);
-            }
-        }
-        */
-
-        //if (c.gameObject.tag == "ground" || c.gameObject.tag == "enemy") {
-		//	isOnGround = false;
-		//}	
     }
 
     public void SetOnGround(bool g)

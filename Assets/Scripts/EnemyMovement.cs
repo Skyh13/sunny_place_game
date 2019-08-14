@@ -47,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
 
     bool DetectPlatformEdge()
     {
+
         return false;
     }
 
@@ -74,7 +75,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D c) {
-
 
 	}
 
