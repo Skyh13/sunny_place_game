@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6951602059782403306}
   - component: {fileID: 3412701115913311541}
-  - component: {fileID: 759976390416975153}
+  - component: {fileID: 169638474314370937}
   m_Layer: 0
   m_Name: BonkTriggerR
   m_TagString: Untagged
@@ -205,7 +205,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 7.43}
   m_EdgeRadius: 0
---- !u!114 &759976390416975153
+--- !u!114 &169638474314370937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4629722893954066184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41e24fa30e5b214eab083145b5a9ae1, type: 3}
+  m_Script: {fileID: 11500000, guid: 45b1b2ba01cc2454a8645a007dc959f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5731018982778025090
@@ -284,6 +284,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5731018982778025090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d41e24fa30e5b214eab083145b5a9ae1, type: 3}
+  m_Script: {fileID: 11500000, guid: 45b1b2ba01cc2454a8645a007dc959f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
