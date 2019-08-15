@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
 
     bool inTheSun = false;
 
+    PlayerSound psound;
+
     PlayerBottomTrigger bottomTrigger;
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         bottomTrigger = GetComponentInChildren<PlayerBottomTrigger>();
+        psound = GetComponent<PlayerSound>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damagePoints)
     {
         currentHealth -= damagePoints;
+        psound.PlayDamageSound();
     }
 
     void OnCollisionEnter2D (Collision2D c) {
@@ -54,13 +58,14 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void OnTriggerEnter2D (Collider2D c) {
-        if (c.gameObject.tag == "sunnySpot") {
+        if (c.gameObject.tag == "sunSpot") {
             inTheSun = true;
+            currentHealth = maxHealth;
         }
     }
 
     void OnTriggerExit2D (Collider2D c) {
-        if (c.gameObject.tag == "sunnySpot") {
+        if (c.gameObject.tag == "sunSpot") {
             inTheSun = false;
         }
     }

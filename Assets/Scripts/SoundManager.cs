@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour {
 	// if a variable is static, there can be only one.
@@ -10,21 +9,20 @@ public class SoundManager : MonoBehaviour {
 	public GameObject audioSourcePrefab;
 	public AudioSource[] audioSources;
     public int NumOfAudioSources;
-    public Slider musicSlider;
-    public Slider sfxSlider;
     
+	public float musicVolume = 0.7f;
+	public float sfxVolume = 0.7f;
+
+	AudioSource backgroundMusic = null;
+
 	void Awake () {
-		/*
-			this is the standard way of setting up a singleton
-			it will make sure there is only one of these objects and that it exists between scene loads
-		*/
-		//if (Instance == null) {
-		//	DontDestroyOnLoad(this);
+		if (Instance == null) {
+			DontDestroyOnLoad(this);
 			Instance = this;
-		//}
-		//else {
-		//	Destroy(this.gameObject);
-		//}
+		}
+		else {
+			Destroy(this.gameObject);
+		}
 	}
 
 	void Start () {
@@ -36,15 +34,22 @@ public class SoundManager : MonoBehaviour {
 			audioSources[i] = (Instantiate(audioSourcePrefab) as GameObject).GetComponent<AudioSource>();
 			audioSources[i].transform.SetParent(transform);
 		}
-        musicSlider.value = SaveSoundSettings.Instance.musicVolume;
-        sfxSlider.value = SaveSoundSettings.Instance.sfxVolume;
+
 	}
 
     void Update()
     {
-        SaveSoundSettings.Instance.musicVolume = musicSlider.value;
-        SaveSoundSettings.Instance.sfxVolume = sfxSlider.value;
+
     }
+
+	public void setMusicVolume(float val) {
+		musicVolume = val;
+		backgroundMusic.volume = musicVolume;
+	}
+
+	public void setSfxVolume(float val) {
+		sfxVolume = val;
+	}
 
     // base method for playing a sound. give it a clip, volume, pitch, and optionally a bool for if it should loop
     public AudioSource PlaySound (AudioClip clip, float volume, float pitch, bool loop = false) {
@@ -67,7 +72,7 @@ public class SoundManager : MonoBehaviour {
 	// this is an overload method, which just means that we can pass different or fewer arguments
 	public AudioSource PlaySound (AudioClip clip) {
 		// we just call the first PlaySound method here. it knows to call the one above because we've passed the arguments it's looking for
-		return PlaySound(clip, 1f * SaveSoundSettings.Instance.sfxVolume, 1f);
+		return PlaySound(clip, sfxVolume, 1f);
 	}
 
 	// method to get the index of an audiosource that isn't playing anything currently
@@ -89,7 +94,12 @@ public class SoundManager : MonoBehaviour {
 		float volume = maxVolume - Random.Range(0, volumeDelta);
 		float pitch = maxPitch - Random.Range(0, pitchDelta);
 
-		return PlaySound(clip, volume * SaveSoundSettings.Instance.sfxVolume, pitch);
+		return PlaySound(clip, volume * sfxVolume, pitch);
+	}
+
+	public AudioSource PlayMusic(AudioClip clip)
+	{
+		return backgroundMusic = PlaySound(clip, musicVolume, 1, true);
 	}
 
 	// method to stop a sound 

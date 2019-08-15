@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
 	Rigidbody2D rb;
     PlayerSound psounds;
 	Vector2 movement;
+    SpriteRenderer spriteRenderer;
 
     string moveDirection;
 
@@ -32,6 +33,8 @@ public class EnemyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         moveDirection = "left";
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = true;
     }
 
     // Update is called once per frame
@@ -69,13 +72,15 @@ public class EnemyMovement : MonoBehaviour
 
         if (moveDirection == "left") {
             movement = Vector2.left;
+            spriteRenderer.flipX = true;
         } else if(moveDirection == "right") {
             movement = Vector2.right;
+            spriteRenderer.flipX = false;
         }
     }
 
     void OnCollisionEnter2D (Collision2D c) {
-
+        
 	}
 
 	void OnCollisionExit2D (Collision2D c) {

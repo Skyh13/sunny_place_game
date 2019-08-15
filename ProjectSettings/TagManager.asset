@@ -10,6 +10,7 @@ TagManager:
   - changeStageY
   - enemy
   - endlessPit
+  - sunSpot
   layers:
   - Default
   - TransparentFX

@@ -84,7 +84,6 @@ GameObject:
   - component: {fileID: 2487651963473048090}
   - component: {fileID: 2487651963473048089}
   - component: {fileID: 2487651963473048093}
-  - component: {fileID: 139853099}
   - component: {fileID: 139853100}
   m_Layer: 0
   m_Name: PlayerObject
@@ -146,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 7bd6e049dcb71d848ae35cb14f6d8748, type: 3}
   stepSound: {fileID: 8300000, guid: be0f55dc3d72a534a846b680e3760fc3, type: 3}
-  damageSound: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: a1a0cbb3ebd25be4b99a92613d7178ec, type: 3}
 --- !u!212 &2487651963473048090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: a28fef72cb57f4a9aa52e063aba52dc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -243,18 +242,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24929449, y: 0.19727603}
   m_EdgeRadius: 0
---- !u!114 &139853099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2487651963473048088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 196af42963e67b746ba8cfddd77b87d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &139853100
 MonoBehaviour:
   m_ObjectHideFlags: 0

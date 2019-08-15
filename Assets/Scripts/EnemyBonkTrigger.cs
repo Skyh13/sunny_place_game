@@ -21,7 +21,7 @@ public class EnemyBonkTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        if(c.gameObject.CompareTag("ground") || c.gameObject.CompareTag("player")) {
+        if(c.gameObject.CompareTag("ground") || c.gameObject.CompareTag("player") || c.gameObject.CompareTag("enemy")) {
             enemyMovement.ReverseDirection();
         }
     }
