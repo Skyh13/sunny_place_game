@@ -188,7 +188,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 32dd35b7a311b5e449085a0167ae0974, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -721,10 +721,9 @@ GameObject:
   m_Component:
   - component: {fileID: 210243414}
   - component: {fileID: 210243416}
-  - component: {fileID: 210243415}
   m_Layer: 0
   m_Name: Grass (7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,32 +742,6 @@ Transform:
   m_Father: {fileID: 1635078592}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &210243415
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210243413}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!212 &210243416
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -973,6 +946,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0031747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!1 &267633127
@@ -985,10 +966,9 @@ GameObject:
   m_Component:
   - component: {fileID: 267633128}
   - component: {fileID: 267633130}
-  - component: {fileID: 267633129}
   m_Layer: 0
   m_Name: Grass (8)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,32 +987,6 @@ Transform:
   m_Father: {fileID: 1635078592}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &267633129
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267633127}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!212 &267633130
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1234,10 +1188,9 @@ GameObject:
   m_Component:
   - component: {fileID: 346914537}
   - component: {fileID: 346914539}
-  - component: {fileID: 346914538}
   m_Layer: 0
   m_Name: Grass (6)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1256,32 +1209,6 @@ Transform:
   m_Father: {fileID: 1635078592}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &346914538
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346914536}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!212 &346914539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1624,6 +1551,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.0807114
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7426758
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
@@ -1970,10 +1905,9 @@ GameObject:
   m_Component:
   - component: {fileID: 546118607}
   - component: {fileID: 546118609}
-  - component: {fileID: 546118608}
   m_Layer: 0
   m_Name: Grass (5)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1992,32 +1926,6 @@ Transform:
   m_Father: {fileID: 1635078592}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &546118608
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546118606}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!212 &546118609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2268,10 +2176,9 @@ GameObject:
   m_Component:
   - component: {fileID: 715257051}
   - component: {fileID: 715257053}
-  - component: {fileID: 715257052}
   m_Layer: 0
   m_Name: Grass (9)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2290,32 +2197,6 @@ Transform:
   m_Father: {fileID: 1635078592}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &715257052
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715257050}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!212 &715257053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2467,7 +2348,7 @@ GameObject:
   - component: {fileID: 762954080}
   m_Layer: 0
   m_Name: Box 3
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2855,6 +2736,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0031747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!4 &803359054 stripped
@@ -3136,6 +3025,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1f0a53bd8babac54c96de075aad93b2d,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0118033
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!1001 &931358200
@@ -3280,6 +3177,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0031747
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
@@ -3450,10 +3355,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1053827353}
   - component: {fileID: 1053827352}
-  - component: {fileID: 1053827354}
   m_Layer: 0
   m_Name: Grass (7)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3521,32 +3425,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1053827354
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053827351}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1001 &1068617143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3708,10 +3586,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1128795258}
   - component: {fileID: 1128795257}
-  - component: {fileID: 1128795259}
   m_Layer: 0
   m_Name: Grass (5)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3779,32 +3656,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1128795259
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128795256}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1 &1136104166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,10 +3666,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1136104168}
   - component: {fileID: 1136104167}
-  - component: {fileID: 1136104169}
   m_Layer: 0
   m_Name: Grass (2)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3860,7 +3710,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f7be6795839fcb4d9ac955a8d273c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3886,32 +3736,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1136104169
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136104166}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1001 &1154741591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4073,10 +3897,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1247474083}
   - component: {fileID: 1247474082}
-  - component: {fileID: 1247474084}
   m_Layer: 0
   m_Name: Grass (3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4118,7 +3941,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f7be6795839fcb4d9ac955a8d273c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4144,13 +3967,19 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1247474084
-BoxCollider2D:
+--- !u!1 &1263424152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1021062083548939838, guid: 8359a0fe612046348b4eec9e2caa0671,
+    type: 3}
+  m_PrefabInstance: {fileID: 3577118730923397973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1263424154
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247474081}
+  m_GameObject: {fileID: 1263424152}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -4161,15 +3990,71 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
+    oldSize: {x: 1.590909, y: 4.628099}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7841554, y: 0.52879643}
+      - {x: 0.77059656, y: 0.57173294}
+      - {x: 0.73443955, y: 0.6327479}
+      - {x: 0.7208806, y: 0.6508264}
+      - {x: 0.6666451, y: 0.70732176}
+      - {x: 0.63726753, y: 0.7299199}
+      - {x: 0.60788995, y: 0.7479984}
+      - {x: 0.5739927, y: 0.76381713}
+      - {x: 0.5513946, y: 0.77285635}
+      - {x: 0.5310563, y: 0.7796358}
+      - {x: 0.49263945, y: 0.78867507}
+      - {x: 0.47908056, y: 0.79093486}
+      - {x: 0.45874223, y: 0.7931947}
+      - {x: 0.40902632, y: 0.7931947}
+      - {x: 0.388688, y: 0.79093486}
+      - {x: 0.36383006, y: 0.7864153}
+      - {x: 0.32993284, y: 0.777376}
+      - {x: 0.30507487, y: 0.7683367}
+      - {x: 0.28247675, y: 0.7570377}
+      - {x: 0.28247675, y: 1.785253}
+      - {x: 0.28021693, y: 1.8214101}
+      - {x: 0.2779571, y: 1.8372288}
+      - {x: 0.27117768, y: 1.8801652}
+      - {x: 0.26439822, y: 1.9140624}
+      - {x: 0.2418001, y: 1.9728175}
+      - {x: 0.21468233, y: 2.0315728}
+      - {x: 0.18304493, y: 2.0812886}
+      - {x: 0.15592717, y: 2.1174457}
+      - {x: 0.101691626, y: 2.1739411}
+      - {x: 0.0813533, y: 2.1897597}
+      - {x: 0.04519628, y: 2.2191372}
+      - {x: 0.002259814, y: 2.2462552}
+      - {x: -0.054235533, y: 2.273373}
+      - {x: -0.0813533, y: 2.2869318}
+      - {x: -0.13332902, y: 2.3004906}
+      - {x: -0.1762655, y: 2.3095298}
+      - {x: -0.19660382, y: 2.3140495}
+      - {x: -0.31185433, y: 2.3140495}
+      - {x: -0.3412319, y: 2.3095298}
+      - {x: -0.4022469, y: 2.295971}
+      - {x: -0.41580576, y: 2.2914515}
+      - {x: -0.4519628, y: 2.2778924}
+      - {x: -0.51523757, y: 2.248515}
+      - {x: -0.5310563, y: 2.2394757}
+      - {x: -0.57173294, y: 2.2123578}
+      - {x: -0.6214488, y: 2.1739411}
+      - {x: -0.67116475, y: 2.1197054}
+      - {x: -0.705062, y: 2.0722494}
+      - {x: -0.73895913, y: 2.0225334}
+      - {x: -0.77059656, y: 1.9502194}
+      - {x: -0.7841554, y: 1.8959839}
+      - {x: -0.7931947, y: 1.8530475}
+      - {x: -0.7954545, y: 1.8440082}
+      - {x: -0.7954545, y: -2.3140495}
+      - {x: 0.7954545, y: -2.3140495}
+      - {x: 0.7954545, y: 0.47682074}
+      - {x: 0.78867507, y: 0.50845814}
 --- !u!1001 &1270664141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4453,6 +4338,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1f0a53bd8babac54c96de075aad93b2d,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0118033
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!1 &1361516858
@@ -4465,10 +4358,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1361516860}
   - component: {fileID: 1361516859}
-  - component: {fileID: 1361516861}
   m_Layer: 0
   m_Name: Grass (8)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4536,32 +4428,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1361516861
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361516858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1001 &1412073266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4797,10 +4663,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1456173376}
   - component: {fileID: 1456173375}
-  - component: {fileID: 1456173377}
   m_Layer: 0
   m_Name: Grass (4)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4842,7 +4707,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f7be6795839fcb4d9ac955a8d273c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4868,32 +4733,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1456173377
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456173374}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1001 &1458824937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5345,6 +5184,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.0807114
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7426758
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!1001 &1553303695
@@ -5489,6 +5336,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.0118033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
@@ -5852,10 +5707,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1696031079}
   - component: {fileID: 1696031078}
-  - component: {fileID: 1696031080}
   m_Layer: 0
   m_Name: Grass (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5897,7 +5751,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f7be6795839fcb4d9ac955a8d273c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5923,32 +5777,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1696031080
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696031077}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!4 &1705824088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405046433482481898, guid: be18737b3f1a75046893b12a0c2a6d7c,
@@ -5968,7 +5796,7 @@ GameObject:
   - component: {fileID: 1735882075}
   m_Layer: 0
   m_Name: Platform_3
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6473,10 +6301,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2024913337}
   - component: {fileID: 2024913336}
-  - component: {fileID: 2024913338}
   m_Layer: 0
   m_Name: Grass (9)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6544,32 +6371,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2024913338
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024913335}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1 &2031523594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6783,6 +6584,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.0807114
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.7426758
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8359a0fe612046348b4eec9e2caa0671, type: 3}
 --- !u!4 &2078750289 stripped
@@ -6946,10 +6755,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2102996745}
   - component: {fileID: 2102996744}
-  - component: {fileID: 2102996746}
   m_Layer: 0
   m_Name: Grass (6)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7017,32 +6825,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2102996746
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102996743}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1 &2139107947
 GameObject:
   m_ObjectHideFlags: 0
@@ -7053,10 +6835,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2139107949}
   - component: {fileID: 2139107948}
-  - component: {fileID: 2139107950}
   m_Layer: 0
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7124,32 +6905,6 @@ Transform:
   m_Father: {fileID: 1931555701}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2139107950
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2139107947}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.074707, y: 0.27759767}
-    newSize: {x: 1.074707, y: 0.27759767}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.074707, y: 0.27759767}
-  m_EdgeRadius: 0
 --- !u!1001 &405046434159704087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7494,22 +7249,22 @@ PrefabInstance:
     - target: {fileID: 1912222543821027243, guid: 8359a0fe612046348b4eec9e2caa0671,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.5097723
+      value: 0.24079466
       objectReference: {fileID: 0}
     - target: {fileID: 1912222543821027243, guid: 8359a0fe612046348b4eec9e2caa0671,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.6170273
+      value: 4.118161
       objectReference: {fileID: 0}
     - target: {fileID: 1912222543821027243, guid: 8359a0fe612046348b4eec9e2caa0671,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.044834644
+      value: -0.020539403
       objectReference: {fileID: 0}
     - target: {fileID: 1912222543821027243, guid: 8359a0fe612046348b4eec9e2caa0671,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.5297294
+      value: 1.5783198
       objectReference: {fileID: 0}
     - target: {fileID: 2979656755501074834, guid: 8359a0fe612046348b4eec9e2caa0671,
         type: 3}
