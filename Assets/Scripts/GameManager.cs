@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null) {
         	DontDestroyOnLoad(this);
             Instance = this;
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else {
         	Destroy(this.gameObject);
@@ -28,31 +29,24 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "GameOver" && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
 
         if (SceneManager.GetActiveScene().name == "Title") {
             if (backgroundMusic == null) {
                 backgroundMusic = SoundManager.Instance.PlayMusic(titleMusic);
             }
-            GameObject.Find("Play Button").GetComponent<Button>().onClick.AddListener(PlayButtonPressed);
-            GameObject.Find("Options Button").GetComponent<Button>().onClick.AddListener(OptionsButtonPressed);
-            GameObject.Find("Quit Button").GetComponent<Button>().onClick.AddListener(QuitButtonPressed);
-        }
-
-        if (SceneManager.GetActiveScene().name == "Options") {
-            GameObject.Find("Back Button").GetComponent<Button>().onClick.AddListener(BackButtonPressed);
         }
     }
 
     public void PlayButtonPressed()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void OptionsButtonPressed()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitButtonPressed()
@@ -62,11 +56,27 @@ public class GameManager : MonoBehaviour
 
     public void BackButtonPressed()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void GameOver()
     {
         SceneManager.LoadScene(3);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Title") {
+            if (backgroundMusic == null) {
+                backgroundMusic = SoundManager.Instance.PlayMusic(titleMusic);
+            }
+            GameObject.Find("Play Button").GetComponent<Button>().onClick.AddListener(PlayButtonPressed);
+            GameObject.Find("Options Button").GetComponent<Button>().onClick.AddListener(OptionsButtonPressed);
+            GameObject.Find("Quit Button").GetComponent<Button>().onClick.AddListener(QuitButtonPressed);
+        }
+
+        if (scene.name == "Options") {
+            GameObject.Find("Back Button").GetComponent<Button>().onClick.AddListener(BackButtonPressed);
+        }
     }
 }
